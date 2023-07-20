@@ -82,8 +82,7 @@ export default function useRecorder() {
           else return initialState;
         });
         const filename = recorderState.audio?.split("/")[recorderState.audio?.split("/").length - 1]
-
-        uploadFileToFirebaseStorage(blob, filename ? filename : new Date().getTime())
+        uploadFileToFirebaseStorage(blob, filename ? filename : new Date().getTime() +"-t")
       };
     }
 
@@ -99,3 +98,4 @@ export default function useRecorder() {
     saveRecording: () => saveRecording(recorderState.mediaRecorder),
   };
 }
+

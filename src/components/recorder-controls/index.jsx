@@ -11,7 +11,7 @@ export default function RecorderControls({ recorderState, handlers }) {
   const { startRecording, saveRecording, cancelRecording } = handlers;
 
   return (
-    <div className="flex justify-around w-full pt-2 pb-4">
+    <div className="flex items-center justify-around w-full pt-2 pb-4">
       {/* timmer and cancel button */}
       <div className="flex items-center justify-between space-x-5">
         <div className="flex  items-center space-x-2 ">
@@ -23,7 +23,7 @@ export default function RecorderControls({ recorderState, handlers }) {
               </span>
             </div>
           )}
-          <div>
+          <div className="text-lg">
             <span>{formatMinutes(recordingMinutes)}</span>
             <span>:</span>
             <span>{formatSeconds(recordingSeconds)}</span>
@@ -43,20 +43,20 @@ export default function RecorderControls({ recorderState, handlers }) {
       <div className="">
         {initRecording ? (
           <button
-            className="hover:text-white"
+            className="hover:text-blue-600"
             title="Save recording"
             disabled={recordingSeconds === 0}
             onClick={saveRecording}
           >
-            <FontAwesomeIcon icon={faSave} size="1x" />
+            <FontAwesomeIcon icon={faSave} className="w-5 h-5" />
           </button>
         ) : (
           <button
-            className="hover:text-white"
+            className="hover:text-blue-600"
             title="Start recording"
             onClick={startRecording}
           >
-            <FontAwesomeIcon icon={faMicrophone} size="1x" />
+            <FontAwesomeIcon icon={faMicrophone} className="w-5 h-5" />
           </button>
         )}
       </div>

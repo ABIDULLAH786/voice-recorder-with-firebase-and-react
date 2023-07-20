@@ -1,9 +1,9 @@
 import { addDoc, collection } from "firebase/firestore";
 import { db, storage } from "../config/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import SimpleAlert from "./simpleAlert";
 const uploadFileToFirebaseStorage = async (mediaBlob, filename) => {
     try {
-        console.log(filename)
         const metadata = {
             contentType: 'audio/mp3', // Set the correct content type here (e.g., audio/wav, audio/mp3, etc.)
         };
@@ -19,15 +19,14 @@ const uploadFileToFirebaseStorage = async (mediaBlob, filename) => {
                 // update progress
                 // setPercent(percent);
             },
-            (err) => console.log(err),
+            (err) => SimpleAlert("Error", "Error while saveing audio record", "error", "1500"),
             async () => {
                 // download url
                 const fileUrl = await getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-                    console.log(url);
                     return url;
                 });
                 // Update Firestore collection with the new URL
-                await addDoc(collection(db, 'audioUrls'), { url: fileUrl, filename: filename });
+                await addDoc(collection(db, 'audioUrls'), { url: fileUrl, filename: filename, createdAt: new Date().getTime()});
 
             }
         );

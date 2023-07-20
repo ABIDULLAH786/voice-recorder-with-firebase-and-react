@@ -1,3 +1,5 @@
+import SimpleAlert from "../utils/simpleAlert";
+
 export async function startRecording(setRecorderState) {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -10,7 +12,8 @@ export async function startRecording(setRecorderState) {
       };
     });
   } catch (err) {
-    console.log(err);
+    SimpleAlert("Error", "Error while starting audio recording", "error", "1500");
+
   }
 }
 

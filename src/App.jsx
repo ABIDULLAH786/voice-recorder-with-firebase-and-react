@@ -14,12 +14,12 @@ export default function App() {
   }, [percent]);
   
   return (
-    <section className="bg-teal-100 min-h-screen">
-      <h1 className="text-center py-4 font-semibold text-3xl">
+    <section className="bg-blue-950 min-h-screen">
+      <h1 className="text-center text-white py-4 font-semibold text-3xl">
         Voice Recorder
       </h1>
       <div className=" flex justify-center">
-        <div className="bg-teal-600 mx-10 md:mx-0 md:w-1/2 p-5 rounded-lg">
+        <div className="bg-white mx-10 md:mx-0 md:w-1/2 p-5 rounded-lg shadow-xl">
           <RecorderControls recorderState={recorderState} handlers={handlers} />
           <RecordingsList/>
         </div>
