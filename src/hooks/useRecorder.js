@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { startRecording, saveRecording } from "../handlers/recorder-controls";
+import uploadFileToFirebaseStorage from "../utils/uploadFileToFirebaseStorage";
 
 const initialState = {
   recordingMinutes: 0,
@@ -68,10 +69,10 @@ export default function useRecorder() {
         chunks.push(e.data);
       };
 
+      // add aduio to the state
       recorder.onstop = () => {
-        const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
+        const blob = new Blob(chunks, { type: "audio/wav" });
         chunks = [];
-
         setRecorderState((prevState) => {
           if (prevState.mediaRecorder)
             return {
@@ -80,6 +81,9 @@ export default function useRecorder() {
             };
           else return initialState;
         });
+        const filename = recorderState.audio?.split("/")[recorderState.audio?.split("/").length - 1]
+
+        uploadFileToFirebaseStorage(blob, filename ? filename : new Date().getTime())
       };
     }
 

@@ -11,7 +11,7 @@ export default function RecorderControls({ recorderState, handlers }) {
   const { startRecording, saveRecording, cancelRecording } = handlers;
 
   return (
-    <div className="flex justify-between w-full">
+    <div className="flex justify-around w-full pt-2 pb-4">
       {/* timmer and cancel button */}
       <div className="flex items-center justify-between space-x-5">
         <div className="flex  items-center space-x-2 ">

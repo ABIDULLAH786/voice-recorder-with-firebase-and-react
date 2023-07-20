@@ -1,0 +1,13 @@
+
+.recordings-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.recordings-list::-webkit-scrollbar-track {
+  background: #e4d3cf;
+}
+
+.recordings-list::-webkit-scrollbar-thumb {
+  background: #09b1ff;
+}
+
