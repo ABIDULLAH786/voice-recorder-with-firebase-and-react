@@ -1,6 +1,6 @@
 # Voice Recorder App 🎤
 
-![Voice Recorder App](insert-screenshot-url-here)
+![Voice Recorder App](https://github.com/ABIDULLAH786/voice-recorder-with-firebase-and-react/assets/67856787/85f0cfd8-6d23-46d8-b4f5-b1555750d44c)
 
 ## Overview
 
@@ -13,10 +13,9 @@ The Voice Recorder App is a simple yet powerful application that allows users to
 - 🔄 Real-time Updates: Firebase Cloud Firestore ensures real-time updates for a seamless user experience.
 - 🌐 Responsive Design: The app is designed to be responsive and work smoothly on various devices.
 
-## Demo
+<!-- ## Demo
 
-Insert a GIF or video showcasing the app's functionality and usage.
-
+Insert a GIF or video showcasing the app's functionality and usage. -->
 ## Tech Stack
 
 - [React](https://reactjs.org/)
@@ -48,8 +47,8 @@ npm start
 - Launch the app.
 - Click on the "Record" button to start recording your voice.
 - Click on the "Stop" button to end the recording.
-- Enter a name for the recording and click on the "Upload" button to store the recording in Firebase.
-- The list of recorded audio files will be displayed below.
+- Press Save Icon button to store the recording in Firebase.
+- The Updated list of recorded audio files will be displayed below.
 
 ## **Contributing**
 Contributions are welcome! Please follow the standard GitHub fork and pull request workflow.
