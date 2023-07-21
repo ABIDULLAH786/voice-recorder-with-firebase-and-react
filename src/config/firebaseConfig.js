@@ -17,12 +17,12 @@ import { getFirestore } from 'firebase/firestore';
 // };
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCmSr9ZwxqA9DoMnbYEUPEx4Dc19BNLF_E",
-    authDomain: "voice-recorder-5ed48.firebaseapp.com",
-    projectId: "voice-recorder-5ed48",
-    storageBucket: "voice-recorder-5ed48.appspot.com",
-    messagingSenderId: "347560616835",
-    appId: "1:347560616835:web:0242e7c21160e5e8038cb6"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
 };
 
 
